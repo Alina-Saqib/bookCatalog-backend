@@ -52,9 +52,9 @@ try {
     const totalPages = Math.ceil(totalBook / limit);
 
     const paginatedBooks = await BookModel.find()
+    .sort({ createdAt: -1 }) 
     .skip(startIndex)
     .limit(limit)
-    .sort({ createdAt: -1 });
 
      if (!paginatedBooks) {
             return res.status(404).json({ message: 'No books found.' });
