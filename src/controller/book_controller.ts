@@ -56,8 +56,6 @@ try {
     .skip(startIndex)
     .limit(limit)
 
-    console.log(paginatedBooks)
-
      if (!paginatedBooks) {
             return res.status(404).json({ message: 'No books found.' });
         }
